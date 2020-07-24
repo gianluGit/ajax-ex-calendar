@@ -2,15 +2,19 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+  background-color: #5F9EA0;
 }
 
 .container {
   width: 80%;
   margin: auto;
+  padding: 50px;
   text-align: center;
   background-color: #FAEBD7;
-  min-height: 100vh;
-  /* position: relative; */
 }
 
 .container i {
@@ -30,8 +34,11 @@
   right: 100px;
 }
 
+
 .container ul li {
   list-style: none;
+  padding: 10px 0;
+  font-size: 20px;
 }
 
 .container h1 {
