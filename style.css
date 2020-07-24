@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  background-color: #FAEBD7;
+  min-height: 100vh;
+  /* position: relative; */
+}
+
+.container i {
+  font-size: 50px;
+  position: absolute;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.container i.prev {
+  top: 50%;
+  left: 100px;
+}
+
+.container i.next {
+  top: 50%;
+  right: 100px;
+}
+
+.container ul li {
+  list-style: none;
+}
+
+.container h1 {
+  margin-bottom: 40px;
+  display: none;
+}
+
+.festivita {
+  color: red;
+}
+
+h1.active {
+  display: block;
+}

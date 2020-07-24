@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/locale/it.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script id="template-mese" type="text/x-handlebars-template">
+      <li data-dataCompleta="{{dataCompleta}}">{{value}}</li>
+    </script>
+
+    <title>Calendario 2018</title>
+  </head>
+  <body>
+    <div class="container">
+      <i class="fas fa-angle-right next"></i>
+      <i class="fas fa-angle-left prev"></i>
+      <h1 class="active first">Gennaio 2018</h1>
+      <h1>Febbraio 2018</h1>
+      <h1>Marzo 2018</h1>
+      <h1>Aprile 2018</h1>
+      <h1>Maggio 2018</h1>
+      <h1>Giugno 2018</h1>
+      <h1>Luglio 2018</h1>
+      <h1>Agosto 2018</h1>
+      <h1>Settembre 2018</h1>
+      <h1>Ottobre 2018</h1>
+      <h1>Novembre 2018</h1>
+      <h1 class="last">Dicembre 2018</h1>
+
+
+      <ul id="target">
+
+      </ul>
+    </div>
+
+
+    <script src="script.js" charset="utf-8"></script>
+  </body>
+</html>
