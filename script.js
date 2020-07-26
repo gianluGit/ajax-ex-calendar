@@ -2,24 +2,22 @@ function initCalendario() {
   var currentMonth = moment('2018-01-01');
   // var year = currentMonth.year();
   // var month = currentMonth.month();
-  console.log(moment());
 
-  printMonth(currentMonth);
+  printMonthInSquare(currentMonth);
   printHolidays(currentMonth);
   nextMonth(currentMonth);
   prevMonth(currentMonth);
 
-
 }
 
-function printMonth(currentMonth) {
-
+function printMonthInSquare(currentMonth) {
   var daysInMonth = currentMonth.daysInMonth();
 
 
-  var template = $('#template-mese').html();
+  var template = $('#template-square').html();
   var compiled = Handlebars.compile(template);
-  var target = $('#target');
+  var target = $('#square-target');
+
   target.html('');
   for (var i = 1; i <= daysInMonth; i++) {
     var dataCompleta = moment({
@@ -28,14 +26,16 @@ function printMonth(currentMonth) {
       day: i
     });
 
-    var daysHTML = compiled({
-      'value': dataCompleta.format('dddd') + ' - ' + i,
+    var squareHTML = compiled({
+      'value': i + ' - ' + dataCompleta.format('dddd'),
       'dataCompleta': dataCompleta.format('YYYY-MM-DD')
     });
 
-    target.append(daysHTML);
+    target.append(squareHTML);
+
   }
 }
+
 
 function printHolidays(currentMonth) {
   var year = currentMonth.year();
@@ -57,7 +57,7 @@ function printHolidays(currentMonth) {
 
       if (success == true) {
         for (var i = 0; i < festivita.length; i++) {
-          var targetFest = $('#target li[data-dataCompleta=' + festivita[i]['date'] + ']');
+          var targetFest = $('#square-target div[data-dataCompleta=' + festivita[i]['date'] + ']');
           targetFest.addClass('festivita');
           targetFest.append(' ' + '- ' + festivita[i]['name']);
         }
@@ -85,7 +85,7 @@ function nextMonth(currentMonth) {
 
   arrowNext.click(function() {
     currentMonth.add(1, 'months');
-    printMonth(currentMonth);
+    printMonthInSquare(currentMonth);
     printHolidays(currentMonth);
 
 
@@ -117,7 +117,7 @@ function prevMonth(currentMonth) {
 
   arrowPrev.click(function() {
     currentMonth.add(-1, 'months');
-    printMonth(currentMonth);
+    printMonthInSquare(currentMonth);
     printHolidays(currentMonth);
 
     arrowNext.show();

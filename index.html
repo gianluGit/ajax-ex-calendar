@@ -11,9 +11,18 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <script id="template-mese" type="text/x-handlebars-template">
+    <!-- versione lista -->
+    <!-- <script id="template-mese" type="text/x-handlebars-template">
       <li data-dataCompleta="{{dataCompleta}}">{{value}}</li>
+    </script> -->
+
+    <!-- versione square -->
+    <script id="template-square" type="text/x-handlebars-template">
+      <div data-dataCompleta="{{dataCompleta}}" class="square">
+        {{value}}
+      </div>
     </script>
+
 
     <title>Calendario 2018</title>
   </head>
@@ -34,10 +43,14 @@
       <h1>Novembre 2018</h1>
       <h1 class="last">Dicembre 2018</h1>
 
+      <div id="square-target">
 
-      <ul id="target">
+      </div>
 
-      </ul>
+
+      <!-- <ul id="target">
+
+      </ul> -->
     </div>
 
 
